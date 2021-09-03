@@ -1,0 +1,48 @@
+﻿@model Builderz.Models.SelectedProjects
+
+@{ ViewData["Title"] = "Details of Book Projects"; }
+@{ Layout = "_Layout"; }
+<br />
+<div>
+    <h4>Details of Book Projects</h4>
+    <hr />
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contact)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Location)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Contact)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Location)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" type="button" class="btn btn-warning">Edit</a>
+    <a asp-action="Index" type="button" class="btn btn-warning">Back to List</a>
+</div>

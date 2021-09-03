@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Builderz.Models.SelectedProjects>
+
+@{ ViewData["Title"] = "Home"; }
+@{
+    Layout = "_Layout";
+}
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Select A Project</a>
+</p>
+<table class="table table-dark table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Contact)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Location)
+    </td>
+    <td>
+        <a asp-action="Edit" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a>
+        <a asp-action="Details" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Details</a>
+        <a asp-action="Delete" type="button" class="btn btn-secondary" asp-route-id="@item.Id">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>
